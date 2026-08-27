@@ -157,18 +157,16 @@ a { color: inherit; text-decoration: none; }
 }
 .btn-ghost:hover { border-color: var(--green-700); color: var(--green-700); }
 
-/* elemento visual do hero — bloco verde suave com traço de vibração */
+/* imagem principal do experimento */
 .hero-visual {
   position: relative;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--green-100), var(--bg-soft));
   border: 1px solid var(--line);
   min-height: 280px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  background: var(--bg-soft);
 }
-.wave-svg { width: 100%; height: auto; display: block; }
+.hero-visual img { width: 100%; height: 100%; min-height: 280px; display: block; object-fit: cover; }
 
 /* ---------- sections ---------- */
 .section { padding: 80px 24px; }
@@ -280,12 +278,24 @@ a { color: inherit; text-decoration: none; }
 .video-fallback a { color: var(--green-700); text-decoration: underline; }
 
 /* equipe */
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .team-card {
   background: #FFFFFF;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
+}
+.team-photo {
+  aspect-ratio: 1 / 1;
+  margin: -22px -22px 18px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  color: var(--green-700);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
 }
 .team-card h3 { font-size: 15.5px; margin-bottom: 6px; color: var(--text); font-family: var(--font-body); font-weight: 600; }
 .team-role { color: var(--green-700); font-size: 11.5px; }
@@ -332,7 +342,7 @@ a:focus-visible, button:focus-visible {
   .hero { grid-template-columns: 1fr; }
   .hero-visual { min-height: 200px; }
   .about-cards { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 720px) {
   .nav { position: fixed; top: 61px; left: 0; right: 0; background: var(--green-700); border-bottom: 1px solid var(--green-900); flex-direction: column; padding: 18px 24px; gap: 16px; transform: translateY(-130%); transition: transform 0.25s ease; }
