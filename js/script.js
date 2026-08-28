@@ -10,16 +10,11 @@ const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@HubExperimentosOnline";
   2. Clique em "Sobre" (About) > "Compartilhar canal" > "Copiar ID do canal".
   3. Cole o valor acima, substituindo o texto entre aspas.
 
-  Este site usa o feed RSS público do YouTube (não exige chave de API):
-    https://www.youtube.com/feeds/videos.xml?channel_id=SEU_ID
-  e o converte para JSON usando o serviço gratuito rss2json.com.
-
-  Limitação: o RSS não indica com certeza se o vídeo está "ao vivo agora".
-  Se quiser o selo "AO VIVO" preciso, ative USE_YOUTUBE_DATA_API abaixo e
-  informe uma chave da YouTube Data API v3 (gratuita, com cota diária).
+  Este site agora usa a YouTube Data API v3 para detectar com precisão
+  quando há uma transmissão ao vivo (live).
 */
-const USE_YOUTUBE_DATA_API = false;
-const YOUTUBE_DATA_API_KEY = "SUA_CHAVE_AQUI";
+const USE_YOUTUBE_DATA_API = true;
+const YOUTUBE_DATA_API_KEY = "AIzaSyDzTw_6xJQsh2UUX_ycnsKK0QB6bErhWKQ";
 
 /* ========================================================================== */
 
@@ -108,7 +103,7 @@ function renderizarVideo({ videoId, titulo, dataPublicacao, aoVivo }) {
       <span class="video-date mono">${formatarData(dataPublicacao)}</span>
     </div>
   `;
-  setStatus(aoVivo ? "live" : "ok", aoVivo ? "Transmitindo agora" : "Última publicação sincronizada");
+  setStatus(aoVivo ? "live" : "ok", aoVivo ? "🔴 Transmitindo agora" : "✓ Última publicação sincronizada");
 }
 
 function renderizarFallback() {
@@ -118,30 +113,7 @@ function renderizarFallback() {
       <p>Acompanhe direto no <a href="${YOUTUBE_CHANNEL_URL}" target="_blank" rel="noopener">canal do YouTube</a>.</p>
     </div>
   `;
-  setStatus("error", "Não sincronizado — verifique o ID do canal em script.js");
-}
-
-async function buscarViaRSS() {
-  const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${YOUTUBE_CHANNEL_ID}`;
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-  const resposta = await fetch(apiUrl);
-  const dados = await resposta.json();
-
-  if (dados.status !== "ok" || !dados.items || !dados.items.length) {
-    throw new Error("Feed vazio ou inválido");
-  }
-
-  const video = dados.items[0];
-  const videoId = extrairVideoId(video.link, video.guid);
-  if (!videoId) throw new Error("Não foi possível identificar o ID do vídeo");
-
-  renderizarVideo({
-    videoId,
-    titulo: video.title,
-    dataPublicacao: video.pubDate,
-    aoVivo: false, // o RSS não confirma status de live com segurança
-  });
+  setStatus("error", "❌ Não sincronizado — verifique a chave de API");
 }
 
 async function buscarViaDataAPI() {
@@ -151,6 +123,12 @@ async function buscarViaDataAPI() {
 
   const resposta = await fetch(buscaUrl);
   const dados = await resposta.json();
+  
+  if (dados.error) {
+    console.error("Erro da API YouTube:", dados.error.message);
+    throw new Error(dados.error.message);
+  }
+  
   if (!dados.items || !dados.items.length) throw new Error("Nenhum vídeo encontrado");
 
   const item = dados.items[0];
@@ -175,7 +153,7 @@ async function carregarUltimoProjeto() {
     if (USE_YOUTUBE_DATA_API && YOUTUBE_DATA_API_KEY && !YOUTUBE_DATA_API_KEY.includes("SUA_CHAVE")) {
       await buscarViaDataAPI();
     } else {
-      await buscarViaRSS();
+      throw new Error("API não configurada");
     }
   } catch (erro) {
     console.error("Erro ao carregar o último projeto:", erro);
