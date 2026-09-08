@@ -278,26 +278,34 @@ a { color: inherit; text-decoration: none; }
 .video-fallback a { color: var(--green-700); text-decoration: underline; }
 
 /* equipe */
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .team-card {
   background: #FFFFFF;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
+  display: flex;
+  flex-direction: column;
 }
 .team-photo {
   aspect-ratio: 1 / 1;
   margin: -22px -22px 18px;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
   background: var(--bg-soft);
   border-bottom: 1px solid var(--line);
-  color: var(--green-700);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  text-transform: uppercase;
+  display: block;
 }
-.team-photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.enrique-card .team-photo img {
+  transform: scale(0.94);
+  object-position: center 10%;
+}
 .team-card h3 { font-size: 15.5px; margin-bottom: 6px; color: var(--text); font-family: var(--font-body); font-weight: 600; }
 .team-role { color: var(--green-700); font-size: 11.5px; }
 .team-note { margin-top: 20px; color: var(--text-muted); font-size: 13px; }
