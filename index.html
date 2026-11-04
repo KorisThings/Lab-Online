@@ -135,8 +135,9 @@
       <p class="eyebrow mono">03 · TRANSMISSÃO</p>
       <h2 class="section-title">Último projeto</h2>
       <p class="lead lead-tight">
-        Carregado diretamente do nosso canal. Se estivermos em experimento agora, ele aparece aqui.
+        A transmissão mais recente do nosso canal, com legendas e capítulos para ir direto à parte que interessa.
       </p>
+      <!-- Os vídeos desta seção vêm de js/videos.js — edite lá. -->
 
       <div class="broadcast-panel" id="ultimoProjeto">
         <div class="broadcast-status mono" id="broadcastStatus">
@@ -155,32 +156,8 @@
     <div class="section-inner">
       <p class="eyebrow mono">04 · EQUIPE</p>
       <h2 class="section-title">Quem está por trás da análise</h2>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo">
-            <img src="https://i1.rgstatic.net/ii/profile.image/365146569494529-1464069134198_Q128/Jasper-Zanco.jpg" alt="Jasper Jose Zanco">
-          </div>
-          <h3>Jasper Jose Zanco</h3>
-          <p class="mono team-role">Orientador e Idealizador</p>
-          <p class="mono team-role">Eng. Agrônomo</p>
-        </div>
-        <div class="team-card enrique-card">
-          <div class="team-photo">
-            <img src="assets/Foto_Enrique.jpeg" alt="Enrique Roberto Martins">
-          </div>
-          <h3>Enrique Roberto Martins</h3>
-          <p class="mono team-role">Orientando</p>
-          <p class="mono team-role">Estudante de Eng. Mecânica</p>
-        </div>
-        <div class="team-card">
-          <div class="team-photo">
-            <img src="assets/Foto_Ruan.jpeg" alt="Ruan da Rosa Correia">
-          </div>
-          <h3>Ruan da Rosa Correia</h3>
-          <p class="mono team-role">Orientando</p>
-          <p class="mono team-role">Estudante de Eng. Mecânica</p>
-        </div>
-      </div>
+      <!-- Os cartões da equipe são gerados a partir de js/equipe.js — edite lá. -->
+      <div class="team-grid" id="equipeGrid"></div>
     </div>
   </section>
 
@@ -210,8 +187,11 @@
 
 <footer class="site-footer">
   <p class="mono">Experimentos Online — Projeto acadêmico de análise de materiais · <span id="anoAtual"></span></p>
+  <p class="mono footer-credit">Site criado por Ruan da Rosa Correia</p>
 </footer>
 
+<script src="js/equipe.js"></script>
+<script src="js/videos.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
