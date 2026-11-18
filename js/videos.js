@@ -29,6 +29,43 @@
 
 const VIDEOS = [
   {
+    id: "8ljIGA6n6ZQ",
+    titulo: "Experimentos Online: Ciência Vegetal, Solo e Água",
+    data: "2026-11-12",
+    duracao: "51min",
+    aoVivo: false,
+    inicio: "0:00",
+    legenda: true,
+    incorporar: true,
+    resumo: [
+      "Aula de apresentação da série Experimentos Online, gravada como teste do primeiro episódio. O professor Jasper Zanco explica a proposta do Laboratório Online: experimentos acompanhados por câmera, em tempo real ou a partir de vídeos enviados pelo público, em que a imagem é a principal ferramenta para extrair dados, de forma não invasiva, contínua e rastreável.",
+      "Ao longo da aula aparecem as ferramentas do laboratório: o ImageJ, cujo plugin GLCM detecta a embebição de uma semente de cebola já no primeiro minuto; o VibraImage, que capta as microvibrações de sementes em germinação; a câmera térmica; lasers no visível e no infravermelho próximo; e o plasma frio. O professor também mostra como a análise de imagem pode antecipar em poucas horas um resultado de vigor de sementes que, no laboratório tradicional, leva de uma a duas semanas. A aula termina com o ciclo científico do HUB e o convite à ciência aberta.",
+    ],
+    capitulos: [
+      { tempo: "0:00",  titulo: "Abertura: a proposta do canal" },
+      { tempo: "1:18",  titulo: "Origem: imagens de sementes no doutorado" },
+      { tempo: "3:11",  titulo: "Como enviar o seu vídeo para análise" },
+      { tempo: "6:00",  titulo: "Os softwares: ImageJ e VibraImage" },
+      { tempo: "8:55",  titulo: "Microvibrações em sementes e frequências em Hz" },
+      { tempo: "12:52", titulo: "Laboratório Online: a ciência que se vê" },
+      { tempo: "15:03", titulo: "Câmera térmica na prática" },
+      { tempo: "16:41", titulo: "A equipe do projeto" },
+      { tempo: "17:56", titulo: "Medir sem tocar: raízes e estresse em folhas" },
+      { tempo: "19:08", titulo: "Lasers no visível e no infravermelho próximo" },
+      { tempo: "24:38", titulo: "Plasma: diagnóstico e tratamento" },
+      { tempo: "27:00", titulo: "Análise não invasiva: cada pixel é um dado" },
+      { tempo: "28:17", titulo: "Vigor de sementes em horas, não em semanas" },
+      { tempo: "30:48", titulo: "Materiais animados e inanimados" },
+      { tempo: "32:13", titulo: "A régua digital: ImageJ e o plugin GLCM" },
+      { tempo: "36:58", titulo: "VibraImage: mapas de cores quadro a quadro" },
+      { tempo: "41:12", titulo: "Nova fronteira: materiais inanimados e speckle laser" },
+      { tempo: "43:40", titulo: "Plasma frio em sementes e metais" },
+      { tempo: "44:33", titulo: "A matriz do laboratório" },
+      { tempo: "49:08", titulo: "O ciclo científico do HUB e a ciência aberta" },
+    ],
+  },
+
+  {
     id: "XTGnnl61ZLk",
     titulo: "Speckle Laser Aplicado ao Diagnóstico de Materiais",
     data: "2026-10-08",

@@ -84,6 +84,29 @@ a { color: inherit; text-decoration: none; }
   transition: color 0.2s ease;
 }
 .nav a:hover, .nav a:focus-visible { color: var(--green-100); }
+.nav a.is-active { font-weight: 600; box-shadow: inset 0 -2px 0 #FFFFFF; padding-bottom: 2px; }
+
+/* início: atalhos para as páginas */
+.explore-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.explore-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 24px 48px;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green-700);
+  border-radius: var(--radius);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.explore-card:hover { transform: translateY(-2px); border-color: var(--green-500); }
+.explore-card h3 { font-size: 19px; color: var(--green-900); }
+.explore-card p { font-size: 14.5px; color: var(--text-muted); }
+.explore-arrow { position: absolute; left: 24px; bottom: 18px; color: var(--green-700); font-size: 18px; transition: transform 0.15s ease; }
+.explore-card:hover .explore-arrow { transform: translateX(4px); }
+@media (max-width: 900px) { .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .explore-grid { grid-template-columns: 1fr; } }
 
 .nav-toggle {
   display: none;
@@ -196,19 +219,103 @@ a { color: inherit; text-decoration: none; }
 .about-card h3 { margin: 14px 0 8px; font-size: 17px; color: var(--text); font-family: var(--font-body); font-weight: 600; }
 .about-card p { color: var(--text-muted); font-size: 14.5px; }
 
-/* método / pipeline */
-.pipeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-.pipeline-step {
+/* método / pipeline — fluxograma de 4 etapas */
+.pipeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 20px;
-  padding: 24px 0;
-  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  counter-reset: none;
 }
-.pipeline-step:last-child { border-bottom: 1px solid var(--line); }
-.pipeline-index { color: var(--green-700); font-size: 14px; padding-top: 3px; }
+.pipeline-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green-700);
+  border-radius: var(--radius);
+}
+/* seta entre as etapas */
+.pipeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  right: -22px;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid var(--green-500);
+  border-right: 2px solid var(--green-500);
+  transform: rotate(45deg);
+}
+.pipeline-index {
+  color: var(--green-700);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1;
+}
 .pipeline-step h3 { font-size: 16.5px; margin-bottom: 6px; color: var(--text); font-family: var(--font-body); font-weight: 600; }
-.pipeline-step p { color: var(--text-muted); font-size: 14.5px; max-width: 560px; }
+.pipeline-step p { color: var(--text-muted); font-size: 14.5px; }
+
+/* legendas das figuras */
+.fig-caption {
+  margin-top: 26px;
+  padding-left: 14px;
+  border-left: 3px solid var(--green-500);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 820px;
+}
+.fig-label {
+  color: var(--green-700);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+.hero-caption { grid-column: 1 / -1; margin-top: 0; }
+
+/* técnicas */
+.tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.tech-media { margin: 0; position: relative; background: #111; }
+.tech-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.tech-media figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: rgba(15, 25, 19, 0.78);
+  color: #FFFFFF;
+  font-size: 10.5px;
+}
+.tech-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.tech-body h3 { font-size: 21px; color: var(--green-900); }
+.tech-tagline { color: var(--green-700); font-size: 11.5px; text-transform: uppercase; margin-top: -4px; }
+.tech-body > p:not(.tech-tagline) { color: var(--text-muted); font-size: 14.5px; }
+.tech-specs {
+  margin: auto 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+.tech-specs dt { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.tech-specs dd { margin: 2px 0 0; font-size: 14px; font-weight: 500; color: var(--text); }
 
 /* último projeto / broadcast */
 .broadcast-panel {
@@ -409,6 +516,7 @@ a { color: inherit; text-decoration: none; }
 }
 .team-card h3 { font-size: 15.5px; margin-bottom: 6px; color: var(--text); font-family: var(--font-body); font-weight: 600; }
 .team-role { color: var(--green-700); font-size: 11.5px; }
+.team-bio { margin-top: 12px; font-size: 14px; color: var(--text); line-height: 1.55; }
 .team-cv {
   list-style: none;
   margin: 14px 0 0;
@@ -473,19 +581,27 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pipeline-step:nth-child(2)::after { display: none; }
+}
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr; }
   .hero-visual { min-height: 200px; }
   .about-cards { grid-template-columns: 1fr; }
   .broadcast-layout { grid-template-columns: 1fr; }
   .chapters-list { max-height: none; }
 }
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .nav { position: fixed; top: 61px; left: 0; right: 0; background: var(--green-700); border-bottom: 1px solid var(--green-900); flex-direction: column; padding: 18px 24px; gap: 16px; transform: translateY(-130%); transition: transform 0.25s ease; }
   .nav.is-open { transform: translateY(0); }
   .nav-toggle { display: flex; }
+}
+@media (max-width: 720px) {
   .hero { padding-top: 70px; }
-  .pipeline-step { grid-template-columns: 40px 1fr; }
+  .pipeline { grid-template-columns: 1fr; gap: 26px; }
+  .pipeline-step:not(:last-child)::after { display: block; top: auto; bottom: -21px; right: auto; left: 30px; transform: rotate(135deg); }
 }
 @media (max-width: 760px) {
   .team-grid { grid-template-columns: 1fr; max-width: 380px; }

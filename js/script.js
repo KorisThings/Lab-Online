@@ -40,6 +40,10 @@ function renderizarEquipe() {
       card.appendChild(criarElemento("p", "mono team-role", funcao));
     });
 
+    if (pessoa.descricao) {
+      card.appendChild(criarElemento("p", "team-bio", pessoa.descricao));
+    }
+
     if (pessoa.curriculo && pessoa.curriculo.length) {
       const lista = criarElemento("ul", "team-cv");
       pessoa.curriculo.forEach((item) => {
@@ -200,7 +204,7 @@ function renderizarVideo(indice) {
 
   const acoes = criarElemento("div", "video-actions");
   acoes.appendChild(criarLink("Assistir no YouTube →", `https://www.youtube.com/watch?v=${video.id}`, "btn btn-primary"));
-  acoes.appendChild(criarLink("Ver o canal", YOUTUBE_CHANNEL_URL, "btn btn-ghost"));
+  acoes.appendChild(criarLink("Transmissões anteriores →", `${YOUTUBE_CHANNEL_URL}/streams`, "btn btn-ghost"));
   meta.appendChild(acoes);
   principal.appendChild(meta);
   layout.appendChild(principal);
@@ -272,12 +276,15 @@ function renderizarVideo(indice) {
   setStatus("ok", `${rotulo} · ${formatarData(video.data)}`);
 }
 
-if (typeof VIDEOS !== "undefined" && VIDEOS.length) {
-  renderizarVideo(0);
-} else {
-  broadcastBody.replaceChildren();
-  const aviso = criarElemento("div", "video-fallback");
-  aviso.appendChild(criarLink("Veja nossos vídeos no YouTube →", YOUTUBE_CHANNEL_URL));
-  broadcastBody.appendChild(aviso);
-  setStatus("error", "Nenhum vídeo configurado");
+// só a página transmissoes.html tem o painel de vídeo
+if (broadcastBody) {
+  if (typeof VIDEOS !== "undefined" && VIDEOS.length) {
+    renderizarVideo(0);
+  } else {
+    broadcastBody.replaceChildren();
+    const aviso = criarElemento("div", "video-fallback");
+    aviso.appendChild(criarLink("Veja nossos vídeos no YouTube →", YOUTUBE_CHANNEL_URL));
+    broadcastBody.appendChild(aviso);
+    setStatus("error", "Nenhum vídeo configurado");
+  }
 }

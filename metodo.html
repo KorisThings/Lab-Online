@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método e técnicas · Experimentos Online</title>
+<meta name="description" content="O fluxo de 4 etapas da plataforma e as técnicas de análise por imagem do HUB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Ao publicar mudanças no CSS/JS, troque a data do ?v= aqui e nos <script> do fim da página,
+     em TODAS as páginas .html, assim os navegadores baixam os arquivos novos na hora. -->
+<link rel="stylesheet" href="css/style.css?v=2026-11-18.3">
+</head>
+<body>
+
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">Experimentos Online</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="metodo.html" class="is-active" aria-current="page">Método</a>
+      <a href="transmissoes.html">Transmissões</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- MÉTODO -->
+  <section class="section section-alt" id="metodo">
+    <div class="section-inner">
+      <p class="eyebrow mono">MÉTODO</p>
+      <h2 class="section-title">Da amostra à transmissão</h2>
+      <ol class="pipeline">
+        <li class="pipeline-step">
+          <span class="pipeline-index mono">01</span>
+          <div>
+            <h3>Coleta e preparo</h3>
+            <p>A amostra orgânica ou inorgânica é registrada, catalogada e preparada segundo o protocolo do experimento.</p>
+          </div>
+        </li>
+        <li class="pipeline-step">
+          <span class="pipeline-index mono">02</span>
+          <div>
+            <h3>Análise instrumental</h3>
+            <p>A tecnologia captura a resposta da amostra e converte o sinal bruto em dados interpretáveis.</p>
+          </div>
+        </li>
+        <li class="pipeline-step">
+          <span class="pipeline-index mono">03</span>
+          <div>
+            <h3>Leitura em tempo real</h3>
+            <p>Os dados são exibidos conforme chegam, permitindo acompanhar a análise no instante em que ocorre.</p>
+          </div>
+        </li>
+        <li class="pipeline-step">
+          <span class="pipeline-index mono">04</span>
+          <div>
+            <h3>Transmissão e registro</h3>
+            <p>Todo o experimento é transmitido no YouTube e arquivado como material de consulta do projeto.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="fig-caption"><span class="fig-label mono">Figura 3</span>
+        Fluxograma metodológico da plataforma, demonstrando o caminho da amostra desde a coleta até a transmissão e arquivamento no YouTube.</p>
+    </div>
+  </section>
+
+  <!-- TÉCNICAS -->
+  <section class="section" id="tecnicas">
+    <div class="section-inner">
+      <p class="eyebrow mono">TÉCNICAS</p>
+      <h2 class="section-title">O ecossistema de imagem do HUB</h2>
+      <p class="lead lead-tight">
+        A imagem é a ferramenta principal de extração: o organismo ou o material permanece intocado,
+        e cada medição gera um registro permanente, contínuo, repetível e rastreável.
+        Quatro ferramentas compõem a matriz do laboratório.
+      </p>
+
+      <div class="tech-grid">
+        <article class="tech-card">
+          <figure class="tech-media">
+            <img src="assets/tecnicas/imagej-glcm.jpg" alt="Tela do ImageJ (Fiji) com o plugin de texturas GLCM aberto sobre um quadro de vídeo em falsa cor" loading="lazy">
+            <figcaption class="mono">Captura de tela · ImageJ (Fiji) com plugin GLCM</figcaption>
+          </figure>
+          <div class="tech-body">
+            <h3>ImageJ</h3>
+            <p class="tech-tagline mono">A régua digital</p>
+            <p>Software livre e gratuito para extrair geometria de imagens: calibrar a escala, segmentar a área de interesse, traçar as medidas e exportar os dados em mm ou cm².</p>
+            <dl class="tech-specs">
+              <div><dt>Ação</dt><dd>Observação passiva</dd></div>
+              <div><dt>Setup</dt><dd>Software</dd></div>
+              <div><dt>Alvo</dt><dd>Animados e inanimados</dd></div>
+              <div><dt>Saída</dt><dd>Medidas geométricas</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="tech-card">
+          <figure class="tech-media">
+            <img src="assets/tecnicas/vibraimage.jpg" alt="Tela do software VibraImage mostrando a imagem da câmera e três mapas de cores gerados a partir dela" loading="lazy">
+            <figcaption class="mono">Registro no laboratório · VibraImage em operação</figcaption>
+          </figure>
+          <div class="tech-body">
+            <h3>VibraImage</h3>
+            <p class="tech-tagline mono">Mapeando o invisível</p>
+            <p>Analisa variações mínimas de pixels entre quadros de um vídeo contínuo e as converte em mapas de cores, revelando respostas a estímulos e sinais precoces de estresse que escapam ao olho humano.</p>
+            <dl class="tech-specs">
+              <div><dt>Ação</dt><dd>Observação dinâmica</dd></div>
+              <div><dt>Setup</dt><dd>Software</dd></div>
+              <div><dt>Alvo</dt><dd>Animados e inanimados</dd></div>
+              <div><dt>Saída</dt><dd>Mapas de cores</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="tech-card">
+          <figure class="tech-media">
+            <img src="https://i.ytimg.com/vi/XTGnnl61ZLk/hqdefault.jpg" alt="Capa da transmissão “Speckle Laser Aplicado ao Diagnóstico de Materiais”" loading="lazy">
+            <figcaption class="mono">Transmissão de 08/10/2026 · Oficina de speckle laser</figcaption>
+          </figure>
+          <div class="tech-body">
+            <h3>Speckle Laser</h3>
+            <p class="tech-tagline mono">A impressão digital óptica</p>
+            <p>Um feixe de laser sobre uma superfície rugosa forma um padrão de interferência único. Qualquer microdeformação altera essa “assinatura óptica”, o que permite diagnósticos sem contato.</p>
+            <dl class="tech-specs">
+              <div><dt>Ação</dt><dd>Observação óptica</dd></div>
+              <div><dt>Setup</dt><dd>Hardware + software</dd></div>
+              <div><dt>Alvo</dt><dd>Materiais inanimados</dd></div>
+              <div><dt>Saída</dt><dd>Padrões de microdeformação</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="tech-card">
+          <figure class="tech-media">
+            <img src="assets/tecnicas/plasma-frio.jpg" alt="Ilustração de um jato de plasma frio aplicado sobre sementes e uma superfície metálica" loading="lazy">
+            <figcaption class="mono">Imagem ilustrativa · Plasma frio</figcaption>
+          </figure>
+          <div class="tech-body">
+            <h3>Plasma Frio</h3>
+            <p class="tech-tagline mono">Da observação à intervenção</p>
+            <p>Enquanto as ferramentas ópticas apenas leem os dados, o plasma frio altera a amostra: trata a superfície de sementes para otimizar a germinação e modifica superfícies metálicas. Os efeitos são medidos antes e depois com o ecossistema de imagem do HUB.</p>
+            <dl class="tech-specs">
+              <div><dt>Ação</dt><dd>Intervenção ativa</dd></div>
+              <div><dt>Setup</dt><dd>Hardware</dd></div>
+              <div><dt>Alvo</dt><dd>Ambos</dd></div>
+              <div><dt>Saída</dt><dd>Modificação de superfície</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="mono">Experimentos Online — Projeto acadêmico de análise de materiais · <span id="anoAtual"></span></p>
+  <p class="mono footer-credit">Site criado por Ruan da Rosa Correia</p>
+</footer>
+
+<script src="js/script.js?v=2026-11-18.3"></script>
+</body>
+</html>

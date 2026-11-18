@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipe · Experimentos Online</title>
+<meta name="description" content="A equipe do Laboratório Online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Ao publicar mudanças no CSS/JS, troque a data do ?v= aqui e nos <script> do fim da página,
+     em TODAS as páginas .html, assim os navegadores baixam os arquivos novos na hora. -->
+<link rel="stylesheet" href="css/style.css?v=2026-11-18.3">
+</head>
+<body>
+
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">Experimentos Online</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="metodo.html">Método</a>
+      <a href="transmissoes.html">Transmissões</a>
+      <a href="equipe.html" class="is-active" aria-current="page">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- EQUIPE -->
+  <section class="section" id="equipe">
+    <div class="section-inner">
+      <p class="eyebrow mono">EQUIPE</p>
+      <h2 class="section-title">Quem está por trás da análise</h2>
+      <!-- Os cartões da equipe são gerados a partir de js/equipe.js — edite lá. -->
+      <div class="team-grid" id="equipeGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="mono">Experimentos Online — Projeto acadêmico de análise de materiais · <span id="anoAtual"></span></p>
+  <p class="mono footer-credit">Site criado por Ruan da Rosa Correia</p>
+</footer>
+
+<script src="js/equipe.js?v=2026-11-18.3"></script>
+<script src="js/script.js?v=2026-11-18.3"></script>
+</body>
+</html>

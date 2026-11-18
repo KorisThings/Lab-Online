@@ -8,22 +8,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<!-- Ao publicar mudanças no CSS/JS, troque a data do ?v= aqui e nos <script> do fim da página,
+     em TODAS as páginas .html, assim os navegadores baixam os arquivos novos na hora. -->
+<link rel="stylesheet" href="css/style.css?v=2026-11-18.3">
 </head>
 <body>
 
 <header class="site-header" id="topo">
   <div class="header-inner">
-    <a class="brand" href="#topo">
+    <a class="brand" href="index.html">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">Experimentos Online</span>
     </a>
     <nav class="nav" id="nav">
-      <a href="#sobre">Sobre</a>
-      <a href="#metodo">Método</a>
-      <a href="#ultimo-projeto">Último Projeto</a>
-      <a href="#equipe">Equipe</a>
-      <a href="#contato">Contato</a>
+      <a href="index.html" class="is-active" aria-current="page">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="metodo.html">Método</a>
+      <a href="transmissoes.html">Transmissões</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="contato.html">Contato</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
@@ -47,137 +50,49 @@
         com experimentos conduzidos e transmitidos em tempo real — do preparo da amostra ao resultado final.
       </p>
       <div class="hero-actions">
-        <a href="#ultimo-projeto" class="btn btn-primary">Ver último experimento</a>
-        <a href="#metodo" class="btn btn-ghost">Como funciona</a>
+        <a href="transmissoes.html" class="btn btn-primary">Ver último experimento</a>
+        <a href="metodo.html" class="btn btn-ghost">Como funciona</a>
       </div>
     </div>
 
     <div class="hero-visual">
       <img src="assets/experimento.jpeg" alt="Experimento de análise de materiais no laboratório">
     </div>
+
+    <p class="fig-caption hero-caption"><span class="fig-label mono">Figura 1</span>
+      Página inicial do Lab. Online, destacando a proposta de leitura espectral em tempo real de amostras orgânicas e inorgânicas.</p>
   </section>
 
-  <!-- SOBRE -->
-  <section class="section" id="sobre">
+  <!-- EXPLORE -->
+  <section class="section section-alt" id="explore">
     <div class="section-inner">
-      <p class="eyebrow mono">01 · SOBRE O PROJETO</p>
-      <h2 class="section-title">Uma leitura aberta da matéria</h2>
-      <div class="about-grid">
-        <p class="lead">
-          Desenvolvemos e validamos, em ambiente acadêmico, uma tecnologia de análise capaz de
-          caracterizar materiais orgânicos e inorgânicos a partir de amostras de laboratório.
-          Decidimos colocar o processo inteiro na internet — não apenas os resultados finais — para
-          dar visibilidade real ao método e permitir que qualquer pessoa acompanhe a análise
-          acontecendo.
-        </p>
-        <div class="about-cards">
-          <div class="about-card">
-            <span class="about-card-icon" aria-hidden="true">◆</span>
-            <h3>Orgânicos</h3>
-            <p>Identificação de compostos e estruturas em amostras de origem biológica e sintética.</p>
-          </div>
-          <div class="about-card">
-            <span class="about-card-icon" aria-hidden="true">▲</span>
-            <h3>Inorgânicos</h3>
-            <p>Caracterização de minerais, metais e compostos inorgânicos por resposta espectral.</p>
-          </div>
-          <div class="about-card">
-            <span class="about-card-icon" aria-hidden="true">●</span>
-            <h3>Transmissão aberta</h3>
-            <p>Experimentos executados e transmitidos ao vivo, sem cortes, direto do laboratório.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MÉTODO -->
-  <section class="section section-alt" id="metodo">
-    <div class="section-inner">
-      <p class="eyebrow mono">02 · MÉTODO</p>
-      <h2 class="section-title">Da amostra à transmissão</h2>
-      <ol class="pipeline">
-        <li class="pipeline-step">
-          <span class="pipeline-index mono">01</span>
-          <div>
-            <h3>Coleta e preparo</h3>
-            <p>A amostra orgânica ou inorgânica é registrada, catalogada e preparada segundo o protocolo do experimento.</p>
-          </div>
-        </li>
-        <li class="pipeline-step">
-          <span class="pipeline-index mono">02</span>
-          <div>
-            <h3>Análise instrumental</h3>
-            <p>A tecnologia captura a resposta da amostra e converte o sinal bruto em dados interpretáveis.</p>
-          </div>
-        </li>
-        <li class="pipeline-step">
-          <span class="pipeline-index mono">03</span>
-          <div>
-            <h3>Leitura em tempo real</h3>
-            <p>Os dados são exibidos conforme chegam, permitindo acompanhar a análise no instante em que ocorre.</p>
-          </div>
-        </li>
-        <li class="pipeline-step">
-          <span class="pipeline-index mono">04</span>
-          <div>
-            <h3>Transmissão e registro</h3>
-            <p>Todo o experimento é transmitido no YouTube e arquivado como material de consulta do projeto.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ÚLTIMO PROJETO -->
-  <section class="section" id="ultimo-projeto">
-    <div class="section-inner">
-      <p class="eyebrow mono">03 · TRANSMISSÃO</p>
-      <h2 class="section-title">Último projeto</h2>
-      <p class="lead lead-tight">
-        A transmissão mais recente do nosso canal, com legendas e capítulos para ir direto à parte que interessa.
-      </p>
-      <!-- Os vídeos desta seção vêm de js/videos.js — edite lá. -->
-
-      <div class="broadcast-panel" id="ultimoProjeto">
-        <div class="broadcast-status mono" id="broadcastStatus">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span id="statusText">Sincronizando com o canal…</span>
-        </div>
-        <div class="broadcast-body" id="broadcastBody">
-          <div class="broadcast-skeleton" aria-hidden="true"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EQUIPE -->
-  <section class="section section-alt" id="equipe">
-    <div class="section-inner">
-      <p class="eyebrow mono">04 · EQUIPE</p>
-      <h2 class="section-title">Quem está por trás da análise</h2>
-      <!-- Os cartões da equipe são gerados a partir de js/equipe.js — edite lá. -->
-      <div class="team-grid" id="equipeGrid"></div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section" id="contato">
-    <div class="section-inner contact-inner">
-      <p class="eyebrow mono">05 · CONTATO</p>
-      <h2 class="section-title">Acompanhe ou fale com a gente</h2>
-      <div class="contact-links">
-        <a class="contact-link" href="https://www.youtube.com/@HubExperimentosOnline" target="_blank" rel="noopener">
-          <span class="contact-link-label">YouTube</span>
-          <span class="contact-link-value">Experimentos ao vivo →</span>
+      <p class="eyebrow mono">EXPLORE O LABORATÓRIO</p>
+      <h2 class="section-title">A ciência que se vê</h2>
+      <div class="explore-grid">
+        <a class="explore-card" href="sobre.html">
+          <h3>Sobre o projeto</h3>
+          <p>Os três pilares: materiais orgânicos, inorgânicos e transmissão aberta.</p>
+          <span class="explore-arrow mono" aria-hidden="true">→</span>
         </a>
-        <a class="contact-link" href="mailto:hubexperimentosonline@gmail.com">
-          <span class="contact-link-label">E-mail</span>
-          <span class="contact-link-value">hubexperimentosonline@gmail.com →</span>
+        <a class="explore-card" href="metodo.html">
+          <h3>Método e técnicas</h3>
+          <p>O fluxo de 4 etapas e as ferramentas: ImageJ, VibraImage, speckle laser e plasma frio.</p>
+          <span class="explore-arrow mono" aria-hidden="true">→</span>
         </a>
-        <a class="contact-link" href="tel:+554899286321">
-          <span class="contact-link-label">Telefone</span>
-          <span class="contact-link-value">(48) 9928-6321 →</span>
+        <a class="explore-card" href="transmissoes.html">
+          <h3>Transmissões</h3>
+          <p>O último experimento com capítulos e legendas, e o arquivo das transmissões anteriores.</p>
+          <span class="explore-arrow mono" aria-hidden="true">→</span>
+        </a>
+        <a class="explore-card" href="equipe.html">
+          <h3>Equipe</h3>
+          <p>Quem idealiza, orienta e constrói o Laboratório Online.</p>
+          <span class="explore-arrow mono" aria-hidden="true">→</span>
+        </a>
+        <a class="explore-card" href="contato.html">
+          <h3>Contato</h3>
+          <p>Canal no YouTube, e-mail e telefone. Sugira o próximo material a ser analisado.</p>
+          <span class="explore-arrow mono" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -190,8 +105,6 @@
   <p class="mono footer-credit">Site criado por Ruan da Rosa Correia</p>
 </footer>
 
-<script src="js/equipe.js"></script>
-<script src="js/videos.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script.js?v=2026-11-18.3"></script>
 </body>
 </html>

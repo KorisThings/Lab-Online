@@ -10,6 +10,7 @@
        "center 50%"  → centro (padrão)
        "center 100%" → mostra mais a parte de baixo
    • Mudar cargos ....... edite a lista "funcoes" (aparecem em verde).
+   • Mudar a descrição .. edite "descricao" (o parágrafo curto abaixo dos cargos).
    • Mudar o currículo .. edite a lista "curriculo". Cada linha pode ser:
        - um texto simples:      "Eng. Agrônomo",
        - um texto com link:     { texto: "Professor Adjunto — UNISUL", url: "https://www.unisul.br" },
@@ -24,12 +25,12 @@
 const EQUIPE = [
   {
     nome: "Jasper Jose Zanco",
-    foto: "assets/Foto_Jasper.jpg",
+    foto: "assets/equipe/jasper.jpg",
     posicaoFoto: "center 35%",
     funcoes: [
-      "Orientador",
-      "Idealizador do projeto Lab. On-line",
+      "Orientador e Idealizador",
     ],
+    descricao: "O visionário do Laboratório Online, conectando biologia, materiais e tecnologia de ponta.",
     curriculo: [
       "Eng. Agrônomo",
       { texto: "Professor Adjunto — UNISUL", url: "https://www.unisul.br" },
@@ -41,28 +42,29 @@ const EQUIPE = [
 
   {
     nome: "Enrique Roberto Martins",
-    foto: "assets/Foto_Enrique.jpeg",
+    foto: "assets/equipe/enrique.jpg",
     posicaoFoto: "center 30%",
     funcoes: [
-      "Orientando",
+      "Orientando | Acad. Eng. Mecânica",
     ],
+    descricao: "Desenvolvendo soluções de ponte entre a análise estrutural mecânica e o ecossistema óptico digital.",
     curriculo: [
-      "Estudante de Eng. Mecânica",
+      "Acadêmico de Engenharia Mecânica",
     ],
-    lattes: "", // ← cole aqui o link do Lattes do Enrique
+    lattes: "http://lattes.cnpq.br/7902611659232308",
   },
 
   {
     nome: "Ruan da Rosa Correia",
-    foto: "assets/Foto_Ruan.jpeg",
-    posicaoFoto: "center 50%",
+    foto: "assets/equipe/ruan.jpg",
+    posicaoFoto: "center 40%",
     funcoes: [
-      "Orientando",
-      "Criador do site",
+      "Orientando e Criador da Plataforma | Acad. Eng. Mecânica",
     ],
+    descricao: "O arquiteto do HUB digital, estruturando a interface para a difusão da ciência aberta.",
     curriculo: [
-      "Estudante de Eng. Mecânica",
+      "Acadêmico de Engenharia Mecânica",
     ],
-    lattes: "", // ← cole aqui o link do seu Lattes
+    lattes: "http://lattes.cnpq.br/9334900655901820",
   },
 ];
